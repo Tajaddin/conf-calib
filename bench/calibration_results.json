@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "n_rows": 1000,
+    "skipped": 2,
+    "n_used": 998
+  },
+  "reports": [
+    {
+      "label": "raw",
+      "n": 300,
+      "ece": 0.1483,
+      "brier": 0.152,
+      "log_loss": 3.903,
+      "accuracy": 0.8433
+    },
+    {
+      "label": "platt",
+      "n": 300,
+      "ece": 0.0372,
+      "brier": 0.1267,
+      "log_loss": 0.4099,
+      "accuracy": 0.84
+    },
+    {
+      "label": "isotonic",
+      "n": 300,
+      "ece": 0.0304,
+      "brier": 0.125,
+      "log_loss": 0.406,
+      "accuracy": 0.8433
+    },
+    {
+      "label": "temperature",
+      "n": 300,
+      "ece": 0.0919,
+      "brier": 0.1394,
+      "log_loss": 0.4803,
+      "accuracy": 0.8433,
+      "temperature": 10.0
+    }
+  ]
+}

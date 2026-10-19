@@ -32,7 +32,7 @@ Raw outputs: [`bench/llama_boolq.jsonl`](bench/llama_boolq.jsonl) (1000 rows). P
 
 Calibration textbooks use synthetic miscalibrated data. Production LLM teams have a real problem:
 
-> The model says "100% confident" 91% of the time, but it's wrong 16% of the time. The Brier score is *worse* than a coin flip.
+> The model says "100% confident" 91% of the time, but it's wrong 16% of the time. Its log loss (3.90) is more than five times a coin flip's (0.69). Brier score (0.152) still beats a coin flip (0.25), so Brier alone understates the problem.
 
 That's exactly what `conf-calib` measures and fixes. It takes a stream of `(predicted_label, verbalized_confidence, true_label)` triples, fits a one-line calibrator on a held-out set, and produces calibrated probabilities you can route on (e.g., "route to human review when calibrated p < 0.7" instead of "when raw confidence < 70" which never triggers).
 
